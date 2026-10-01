@@ -1,0 +1,9 @@
+.cache/
+__pycache__/
+*.pyc
+.DS_Store
+/APPS/train.jsonl
+/APPS/test.jsonl
+/SWE-bench/full/data/train-00000-of-00001.parquet
+/LiveCodeBench/test6.jsonl
+/LiveCodeBench/test5.jsonl

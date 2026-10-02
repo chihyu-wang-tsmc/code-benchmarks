@@ -1,5 +1,18 @@
 # Code benchmarks (downloaded 2026-10-01)
 
+This repo got too large, so the data now lives in separate repos. This repo keeps the index and `download.py`.
+
+| Repo | Dirs | Size |
+|---|---|---|
+| [code-benchmarks-python](https://github.com/chihyu-wang-tsmc/code-benchmarks-python) | HumanEval, MBPP, MBXP_mxeval, MathQA-Python | ~43MB |
+| [code-benchmarks-competitive](https://github.com/chihyu-wang-tsmc/code-benchmarks-competitive) | APPS, CodeContests, LiveCodeBench | ~110MB |
+| [code-benchmarks-bigcodebench](https://github.com/chihyu-wang-tsmc/code-benchmarks-bigcodebench) | BigCodeBench, BigCodeBench-Hard | ~19MB |
+| [code-benchmarks-swe-bench](https://github.com/chihyu-wang-tsmc/code-benchmarks-swe-bench) | SWE-bench/{full,Lite,Verified} | ~21MB |
+| [code-benchmarks-codexglue](https://github.com/chihyu-wang-tsmc/code-benchmarks-codexglue) | CodeXGLUE/* (12 tasks, all except BigCloneBench) | ~202MB |
+| [code-benchmarks-codexglue-bigclonebench](https://github.com/chihyu-wang-tsmc/code-benchmarks-codexglue-bigclonebench) | CodeXGLUE/code_x_glue_cc_clone_detection_big_clone_bench | ~438MB |
+
+## Sources
+
 | Dir | Source | Notes |
 |---|---|---|
 | HumanEval | hf: openai/openai_humaneval | test 164 |
@@ -15,9 +28,9 @@
 
 Re-download / add the omitted splits: see download.py (allow_patterns / ignore_patterns).
 
-## Files not in this repo (over GitHub's 100MB limit)
+## Files over GitHub's 100MB limit
 
-`APPS/test.jsonl` (1292MB), `APPS/train.jsonl` (107MB), `LiveCodeBench/test5.jsonl` (558MB),
-`LiveCodeBench/test6.jsonl` (134MB), `SWE-bench/full/data/train-00000-of-00001.parquet` (107MB).
-
-Run `python fetch_large_files.py` from the repo root to download them into place.
+`APPS/test.jsonl`, `APPS/train.jsonl`, `LiveCodeBench/test5.jsonl`, `LiveCodeBench/test6.jsonl`
+(in code-benchmarks-competitive) and `SWE-bench/full/data/train-00000-of-00001.parquet` (in code-benchmarks-swe-bench)
+are not committed. Each of those repos has its own `fetch_large_files.py`; `python fetch_large_files.py` here still
+downloads all of them into this layout.
